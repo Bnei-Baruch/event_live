@@ -1,0 +1,27 @@
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+:javascript
+  new TWTR.Widget({
+    version: 2,
+    type: 'profile',
+    rpp: 5,
+    interval: 30000,
+    width: 250,
+    height: 300,
+    theme: {
+      shell: {
+        background: '#000000',
+        color: '#ffffff'
+      },
+      tweets: {
+        background: '#ffffff',
+        color: '#000000',
+        links: '#2d7ed4'
+      }
+    },
+    features: {
+      scrollbar: true,
+      loop: false,
+      live: true,
+      behavior: 'all'
+    }
+  }).render().setUser('kabcast').start();

@@ -1,0 +1,11 @@
+!!!
+%head
+  %title
+    EventLive
+  = stylesheet_link_tag    "application"
+  = javascript_include_tag "application"
+  = csrf_meta_tags
+%body
+  #top
+    %img{:src => 'assets/logo.png', :id => 'logo'}
+  = yield
