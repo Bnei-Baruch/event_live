@@ -1,16 +1,20 @@
 #wrapper
-  #events
-    .main_event
-      %h1
-        Main event
-      .stream
-        <iframe width="640" height="383" src="http://www.ustream.tv/embed/9866931?ub=006699&amp;lc=54ABD6&amp;oc=ffffff&amp;uc=ffffff" scrolling="no" frameborder="0" style="border: 0px none transparent;"></iframe>
-    .world_kli
-      %h1
-        World Kli
-      .stream
-        <iframe width="640" height="383" src="http://www.ustream.tv/embed/9866961?ub=006699&amp;lc=54ABD6&amp;oc=ffffff&amp;uc=ffffff" scrolling="no" frameborder="0" style="border: 0px none transparent;">    </iframe>
-  #announcements
-    %h1
-      Announcements
-    = render 'twitter'
+  #top
+    #left
+      .main_event
+        - widget = @widgets[:live_connection]
+        %h1= widget.title
+        .content!= widget.content
+      .world_kli
+        - widget = @widgets[:world_kli]
+        %h1= widget.title
+        .content!= widget.content
+    #right
+      .announcements
+        - widget = @widgets[:announcements]
+        %h1= widget.title
+        .content!= widget.content
+      .facebook_connection
+        - widget = @widgets[:facebook_connection]
+        %h1= widget.title
+        .content!= widget.content

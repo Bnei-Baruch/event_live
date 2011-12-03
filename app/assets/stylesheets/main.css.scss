@@ -5,15 +5,19 @@
   width: 990px;
   margin: 0 auto 50px;
 }
-#top{
+#header{
   text-align: center;
   #logo{
     width: 250px;
   }
 }
-#events {
-  float: left;
-}
-#announcements {
-  float: right;
+#top{
+  #left {
+    float: left;
+    width: 660px;
+  }
+  #right {
+    float: right;
+    width: 300px;
+  }
 }
