@@ -5,7 +5,7 @@ rails_root = ENV['RAILS_ROOT'] || path
 
 # 16 workers and 1 master
 #worker_processes (rails_env == 'production' ? 16 : 4)
-worker_processes (rails_env == 'production' ? 16 : 4)
+worker_processes (rails_env == 'production' ? 3 : 2)
 
 puts 'env:' + ENV.inspect
 # Load rails+github.git into the master before forking workers
