@@ -1,20 +1,12 @@
 #wrapper
   #top
     #left
-      .main_event
-        - widget = @widgets[:live_connection]
-        %h1= widget.title
-        .content!= widget.content
-      .world_kli
-        - widget = @widgets[:world_kli]
-        %h1= widget.title
-        .content!= widget.content
+      = render 'widget', :system_name => 'live_connection'
+      = render 'widget', :system_name => 'world_kli'
     #right
-      .announcements
-        - widget = @widgets[:announcements]
-        %h1= widget.title
-        .content!= widget.content
-      .facebook_connection
-        - widget = @widgets[:facebook_connection]
-        %h1= widget.title
-        .content!= widget.content
+      = render 'widget', :system_name => 'announcements'
+      = render 'widget', :system_name => 'facebook_connection'
+      = render 'widget', :system_name => 'custom_links'
+  .clear
+  #middle
+    = render 'widget', :system_name => 'instructions'

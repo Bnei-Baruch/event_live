@@ -1,0 +1,4 @@
+- widget = @widgets[system_name]
+%div{:id => system_name, :class => 'widget'}
+  %h1= widget.title
+  .content!= widget.content

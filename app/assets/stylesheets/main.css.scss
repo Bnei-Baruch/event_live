@@ -1,23 +1,36 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#wrapper {
-  width: 990px;
-  margin: 0 auto 50px;
-}
 #header{
   text-align: center;
   #logo{
     width: 250px;
   }
 }
-#top{
-  #left {
-    float: left;
-    width: 660px;
+#wrapper {
+  width: 990px;
+  margin: 0 auto 50px;
+
+  .widget{
+    margin: 25px 0 0;
+    h1{
+      font-size: 26px;
+    }
   }
-  #right {
-    float: right;
-    width: 300px;
+  #top{
+    #left {
+      float: left;
+      width: 660px;
+    }
+    #right {
+      float: right;
+      width: 300px;
+    }
   }
+  #middle{
+    width: 100%;
+  }
+}
+.clear{
+  clear: both;
 }

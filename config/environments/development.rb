@@ -17,6 +17,19 @@ EventLive::Application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  #config.action_mailer.delivery_method = :sendmail
+
+  config.action_mailer.smtp_settings = {
+   :address        => 'smtp.gmail.com',
+   :port           => 587,
+   :authentication => :plain,
+   :user_name      => 'baligam.test@gmail.com',
+   :password       => 'baligam123',
+   :enable_starttls_auto => true
+
+  }
+
+  Paperclip.options[:command_path]='/usr/local/Cellar/imagemagick/6.6.9-4/bin'
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -30,3 +43,13 @@ EventLive::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 end
+
+
+# ActionMailer::Base.smtp_settings = {
+#   :address        => "smtp.gmail.com",
+#   :port           => 587,
+#   :authentication => :plain,
+#   :user_name      => "baligam.test@gmail.com",
+#   :password       => "baligam123",
+#   :enable_starttls_auto => true
+# }
