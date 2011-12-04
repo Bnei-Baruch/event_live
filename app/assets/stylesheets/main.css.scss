@@ -12,12 +12,19 @@
   margin: 0 auto 50px;
 
   .widget{
-    margin: 25px 0 0;
+    margin: 35px 0 0;
     h1{
-      font-size: 26px;
+      font-size: 20px;
     }
     big {
       font-size: large;
+    }
+    .frame {
+      border: 1px solid #5E6469;
+      padding: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
     }
   }
   #top{
@@ -27,7 +34,7 @@
     }
     #right {
       float: right;
-      width: 300px;
+      width: 250px;
     }
   }
   #middle{
