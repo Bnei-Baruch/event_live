@@ -1,14 +1,24 @@
 !!!
-%head
-  %title
-    EventLive
-  = stylesheet_link_tag    "application"
-  = javascript_include_tag "application"
-  = csrf_meta_tags
-%body
-  #header
-    %img{:src => 'assets/logo.png', :id => 'logo'}
-    #messages
-      %p.notice= notice
-      %p.alert= alert
-  = yield
+%html(xmlns:fb="http://ogp.me/ns/fb#")
+  %head
+    %title
+      EventLive
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    #fb-root
+    :javascript
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=111694652265703";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    #header
+      %img{:src => 'assets/logo.png', :id => 'logo'}
+      #messages
+        %p.notice= notice
+        %p.alert= alert
+    = yield
