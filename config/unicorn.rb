@@ -1,12 +1,13 @@
 # unicorn_rails -c config/unicorn.rb -E production -D
-#rails_env = ENV['RAILS_ENV'] || 'production'
-#path = rails_env == 'production' ? '/sites/rails/prod/cms' : '/Users/ramigg/Projects/cms'
-#RAILS_ROOT = ENV['RAILS_ROOT'] || path
+rails_env = ENV['RAILS_ENV'] || 'production'
+path = rails_env == 'production' ? '/sites/rails/prod/event_live' : '/Users/ramigg/Projects/cms'
+rails_root = ENV['RAILS_ROOT'] || path
 
 # 16 workers and 1 master
 #worker_processes (rails_env == 'production' ? 16 : 4)
-worker_processes (ENV['RAILS_ENV'] == 'production' ? 16 : 4)
+worker_processes (rails_env == 'production' ? 16 : 4)
 
+puts 'env:' + ENV.inspect
 # Load rails+github.git into the master before forking workers
 # for super-fast worker spawn times
 preload_app true
@@ -39,7 +40,7 @@ before_fork do |server, worker|
   #
   # Using this method we get 0 downtime deploys.
 
-  old_pid = ENV['RAILS_ROOT'] + '/tmp/pids/unicorn.pid.oldbin'
+  old_pid =  rails_root + '/tmp/pids/unicorn.pid.oldbin'
   if File.exists?(old_pid) && server.pid != old_pid
     begin
       Process.kill("QUIT", File.read(old_pid).to_i)
@@ -78,7 +79,7 @@ after_fork do |server, worker|
       Process::UID.change_privilege(target_uid)
     end
   rescue => e
-    if ENV['RAILS_ENV'] == 'development'
+    if rails_env == 'development'
       STDERR.puts "couldn't change user, oh well"
     else
       raise e
