@@ -3,9 +3,11 @@
     #left
       = render 'widget', :system_name => 'live_connection', :no_frame => true
       = render 'widget', :system_name => 'world_kli', :no_frame => true
-      %fb:live-stream(event_app_id="111694652265703" width="640" height="600" always_post_to_friends="true")
+      = render 'widget', :system_name => 'live_stream', :no_frame => true
+      -#%fb:live-stream(event_app_id="111694652265703" width="640" height="600" always_post_to_friends="true")
     #right
       = render 'widget', :system_name => 'announcements', :no_frame => true
+      = render 'widget', :system_name => 'convention_broadcast'
       = render 'widget', :system_name => 'facebook_connection'
       = render 'widget', :system_name => 'custom_links'
   .clear

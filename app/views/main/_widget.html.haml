@@ -1,5 +1,6 @@
 - widget = @widgets[system_name]
-%div{:id => system_name, :class => 'widget'}
-  %h1= widget.title
-  %div{:class => local_assigns[:no_frame] ? 'content' : 'content frame'}
-    != widget.content
+- unless widget.hide
+  %div{:id => system_name, :class => 'widget'}
+    %h1= widget.title
+    %div{:class => local_assigns[:no_frame] ? 'content' : 'content frame'}
+      != widget.content

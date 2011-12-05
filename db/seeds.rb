@@ -66,6 +66,16 @@
      :title => 'Instructions',
      :content => ''
     },
+    {
+     :system_name => 'convention_broadcast',
+     :title => 'Convention broadcast',
+     :content => ''
+    },
+    {
+     :system_name => 'live_stream',
+     :title => 'Live stream',
+     :content => "<fb:live-stream always_post_to_friends='true' event_app_id='111694652265703' height='600' width='640'></fb:live-stream>"
+    },
 ].each do |element|
   Widget.find_or_create_by_system_name(element)
 end

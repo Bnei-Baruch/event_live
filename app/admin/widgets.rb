@@ -3,6 +3,7 @@ ActiveAdmin.register Widget do
     column :id
     column :title
     column :content
+    column :hide
     column :updated_at
     column "Actions" do |widget|
       link_to("View", admin_widget_path(widget)) +
@@ -16,6 +17,7 @@ ActiveAdmin.register Widget do
     f.inputs "Widget Details" do
       f.input :title
       f.input :content, :input_html => { :class => "ckeditor" }
+      f.input :hide
     end
     f.buttons
   end
